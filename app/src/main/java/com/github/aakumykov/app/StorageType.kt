@@ -1,4 +1,4 @@
-package com.github.aakumykov.daggered_lib
+package com.github.aakumykov.app
 
 enum class StorageType {
     LOCAL,

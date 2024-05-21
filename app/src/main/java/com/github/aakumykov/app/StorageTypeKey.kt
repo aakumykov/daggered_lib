@@ -1,6 +1,5 @@
-package com.github.aakumykov.daggered_lib.di
+package com.github.aakumykov.app
 
-import com.github.aakumykov.daggered_lib.StorageType
 import dagger.MapKey
 
 @MapKey
