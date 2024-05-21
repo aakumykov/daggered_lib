@@ -8,7 +8,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 
 @Module
-interface AppQwertyCreatorsModule {
+interface AppQwertyFactoriesModule {
 
     @Binds
     @IntoMap
