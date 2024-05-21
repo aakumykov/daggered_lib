@@ -20,12 +20,20 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val userName = App.appComponent.getQwertyFactoryCreator()
+        val user1 = User("Андрей")
+
+        findViewById<TextView>(R.id.textView1).text = App.appComponent.getQwertyFactoryCreator()
             .createQwertyFactory(StorageType.REMOTE)
-            ?.create(User("Андрей"))
+            ?.create(user1)
             ?.getUser()
             ?.name
 
-        findViewById<TextView>(R.id.textView).text = userName
+        val user2 = User("Лилечка")
+
+        findViewById<TextView>(R.id.textView2).text = App.appComponent.getQwertyCreatorCreator()
+            .createQwertyCreator(StorageType.LOCAL)
+            ?.createQwerty(user2)
+            ?.getUser()
+            ?.name
     }
 }

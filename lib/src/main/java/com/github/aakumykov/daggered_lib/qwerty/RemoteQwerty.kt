@@ -16,11 +16,7 @@ class RemoteQwerty @AssistedInject constructor(@Assisted private val user: User)
         override fun create(user: User): RemoteQwerty
     }
 
-    class Creator @Inject constructor(private val qwertyFactory: RemoteQwerty.Factory): QwertyCreator {
-        override fun createQwerty(user: User): RemoteQwerty = qwertyFactory.create(user)
-    }
-
-    companion object {
-        fun createDefault(user: User): RemoteQwerty = RemoteQwerty(user)
+    class Creator @Inject constructor(): QwertyCreator {
+        override fun createQwerty(user: User): RemoteQwerty = RemoteQwerty(user)
     }
 }

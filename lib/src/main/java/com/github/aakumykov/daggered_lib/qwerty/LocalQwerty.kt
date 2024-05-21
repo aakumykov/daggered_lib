@@ -16,11 +16,7 @@ class LocalQwerty @AssistedInject constructor(@Assisted private val user: User):
         override fun create(user: User): LocalQwerty
     }
 
-    class Creator @Inject constructor(private val qwertyFactory: LocalQwerty.Factory): QwertyCreator {
-        override fun createQwerty(user: User): LocalQwerty = qwertyFactory.create(user)
-    }
-
-    companion object {
-        fun createDefault(user: User): LocalQwerty = LocalQwerty(user)
+    class Creator @Inject constructor(): QwertyCreator {
+        override fun createQwerty(user: User): LocalQwerty = LocalQwerty(user)
     }
 }

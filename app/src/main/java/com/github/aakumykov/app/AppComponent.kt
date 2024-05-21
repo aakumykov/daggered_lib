@@ -1,12 +1,12 @@
 package com.github.aakumykov.app
 
-import com.github.aakumykov.daggered_lib.di.QwertyCreatorsModule
 import dagger.Component
 
 @Component(modules = [
-    QwertyCreatorsModule::class,
-    AppQwertyFactoriesModule::class
+    AppQwertyFactoriesModule::class,
+    AppQwertyCreatorsModule::class,
 ])
 interface AppComponent {
     fun getQwertyFactoryCreator(): QwertyFactoryCreator
+    fun getQwertyCreatorCreator(): QwertyCreatorCreator
 }
