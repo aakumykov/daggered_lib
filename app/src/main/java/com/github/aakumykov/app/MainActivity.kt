@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val user1 = User("Андрей и Лилечка")
+        val user1 = User("Андрей и Лилечка, OkHttp")
 
         findViewById<TextView>(R.id.textView1).text = App.appComponent.getQwertyFactoryCreator()
             .createQwertyFactory(StorageType.REMOTE)
