@@ -1,5 +1,6 @@
 package com.github.aakumykov.daggered_lib.qwerty
 
+import com.github.aakumykov.daggered_lib.NetworkService
 import com.github.aakumykov.daggered_lib.User
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
@@ -8,7 +9,7 @@ import okhttp3.OkHttpClient
 
 class RemoteQwerty @AssistedInject constructor(
     @Assisted private val user: User,
-    private val okHttpClient: OkHttpClient,
+    val networkService: NetworkService,
 ): Qwerty
 {
     override fun getUser(): User = user
@@ -19,11 +20,13 @@ class RemoteQwerty @AssistedInject constructor(
     }
 
     companion object {
+
         fun createDefault(user: User): RemoteQwerty {
-            return create(user, OkHttpClient())
+            return create(user, NetworkService(OkHttpClient()))
         }
-        fun create(user: User, okHttpClient: OkHttpClient): RemoteQwerty {
-            return RemoteQwerty(user, okHttpClient)
+
+        fun create(user: User, networkService: NetworkService): RemoteQwerty {
+            return RemoteQwerty(user, networkService)
         }
     }
 }
