@@ -18,7 +18,7 @@ class LocalQwerty @AssistedInject constructor(
         override fun create(user: User): LocalQwerty
     }
 
-    class Creator @Inject constructor(): QwertyCreator {
-        override fun createQwerty(user: User): LocalQwerty = LocalQwerty(user)
+    companion object {
+        fun createDefault(user: User): LocalQwerty = LocalQwerty(user)
     }
 }
