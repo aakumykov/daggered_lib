@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "daggered_lib"
 include(":lib")
+include(":app")
