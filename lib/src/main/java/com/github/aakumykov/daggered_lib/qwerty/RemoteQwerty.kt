@@ -8,7 +8,10 @@ import dagger.assisted.AssistedInject
 import javax.inject.Inject
 
 // TODO: добавить доп. поля
-class RemoteQwerty @AssistedInject constructor(@Assisted private val user: User): Qwerty {
+class RemoteQwerty @AssistedInject constructor(
+    @Assisted private val user: User
+): Qwerty
+{
     override fun getUser(): User = user
 
     @AssistedFactory

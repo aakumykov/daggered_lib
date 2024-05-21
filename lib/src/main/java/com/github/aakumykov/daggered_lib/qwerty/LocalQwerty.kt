@@ -7,7 +7,9 @@ import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import javax.inject.Inject
 
-class LocalQwerty @AssistedInject constructor(@Assisted private val user: User): Qwerty {
+class LocalQwerty @AssistedInject constructor(
+    @Assisted private val user: User
+): Qwerty {
 
     override fun getUser(): User = user
 

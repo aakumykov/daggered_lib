@@ -10,13 +10,13 @@ project.ext {
     groupId = 'com.github.aakumykov'
 
     majorVersionCode = 0
-    minorVersionCode = 1
+    minorVersionCode = 2
     patchVersionCode = 0
     suffix = "alpha"
 
     versionName = majorVersionCode + "." + minorVersionCode + "." + patchVersionCode + "-" + suffix
 
-    versionCode = 1
+    versionCode = 2
 }
 
 android {
