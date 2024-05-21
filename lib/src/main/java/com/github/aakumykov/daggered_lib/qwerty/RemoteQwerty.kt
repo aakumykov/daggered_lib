@@ -22,7 +22,10 @@ class RemoteQwerty @AssistedInject constructor(
 
     companion object {
         fun createDefault(user: User): RemoteQwerty {
-            return RemoteQwerty(user, NetworkService())
+            return create(user, NetworkService())
+        }
+        fun create(user: User, networkService: NetworkService): RemoteQwerty {
+            return RemoteQwerty(user, networkService)
         }
     }
 }
