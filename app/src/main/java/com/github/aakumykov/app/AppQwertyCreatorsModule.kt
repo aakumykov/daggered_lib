@@ -8,15 +8,15 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 
 @Module
-interface AppQwertyFactoriesModule {
+interface AppQwertyCreatorsModule {
 
     @Binds
     @IntoMap
     @KeyStorageType(StorageType.LOCAL)
-    fun bindLocalQwertyFactory(factory: LocalQwerty.Factory): Qwerty.Factory
+    fun bindLocalQwertyCreator(creator: LocalQwerty.Creator): Qwerty.Creator
 
     @Binds
     @IntoMap
     @KeyStorageType(StorageType.REMOTE)
-    fun bindRemoteQwertyFactory(factory: RemoteQwerty.Factory): Qwerty.Factory
+    fun bindRemoteQwertyCreator(creator: RemoteQwerty.Creator): Qwerty.Creator
 }

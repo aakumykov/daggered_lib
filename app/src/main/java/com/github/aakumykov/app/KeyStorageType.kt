@@ -4,4 +4,4 @@ import dagger.MapKey
 
 @MapKey
 @Retention(AnnotationRetention.RUNTIME)
-annotation class StorageTypeKey(val value: StorageType)
+annotation class KeyStorageType(val value: StorageType)

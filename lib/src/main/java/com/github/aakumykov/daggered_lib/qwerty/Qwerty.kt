@@ -8,5 +8,9 @@ interface Qwerty {
     interface Factory {
         fun create(user: User): Qwerty
     }
+
+    interface Creator {
+        fun createQwerty(user: User): Qwerty
+    }
 }
 
