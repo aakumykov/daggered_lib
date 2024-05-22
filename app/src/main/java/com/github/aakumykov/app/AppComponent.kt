@@ -1,6 +1,5 @@
 package com.github.aakumykov.app
 
-import com.github.aakumykov.daggered_lib.di.NetworkModule
 import dagger.Component
 
 @Component(modules = [

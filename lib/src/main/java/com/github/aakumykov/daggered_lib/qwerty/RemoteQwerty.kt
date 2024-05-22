@@ -10,9 +10,10 @@ import javax.inject.Inject
 
 class RemoteQwerty @AssistedInject constructor(
     @Assisted private val user: User,
-    val networkService: NetworkService,
 ): Qwerty
 {
+    private val okHttpClient = OkHttpClient.Builder().build()
+
     override fun getUser(): User = user
 
     @AssistedFactory
@@ -25,13 +26,6 @@ class RemoteQwerty @AssistedInject constructor(
     }
 
     companion object {
-
-        fun createDefault(user: User): RemoteQwerty {
-            return create(user, NetworkService(OkHttpClient()))
-        }
-
-        fun create(user: User, networkService: NetworkService): RemoteQwerty {
-            return RemoteQwerty(user, networkService)
-        }
+        fun create(user: User): RemoteQwerty = RemoteQwerty(user)
     }
 }
