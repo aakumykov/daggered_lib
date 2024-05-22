@@ -1,13 +1,12 @@
 package com.github.aakumykov.app
 
+import com.github.aakumykov.app.qwerty_creators_and_factory.QwertyCreatorFactory
+import com.github.aakumykov.app.qwerty_creators_and_factory.QwertyCreatorsModule
 import dagger.Component
 
 @Component(modules = [
-    AppQwertyFactoriesModule::class,
-//    NetworkModule::class,
-    AppQwertyCreatorsModule::class,
+    QwertyCreatorsModule::class
 ])
 interface AppComponent {
-    fun getQwertyFactoryCreator(): QwertyFactoryCreator
     fun getQwertyCreatorFactory(): QwertyCreatorFactory
 }
